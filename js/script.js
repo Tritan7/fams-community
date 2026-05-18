@@ -73,4 +73,72 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Facilities automatic active rotation and click handling
+    const facilitiesList = document.getElementById('facilities-list');
+    const facilitiesImg = document.getElementById('facilities-img');
+    
+    if (facilitiesList && facilitiesImg) {
+        const items = facilitiesList.querySelectorAll('li');
+        let currentIndex = 0;
+        let intervalId;
+
+        const changeActiveItem = (newIndex) => {
+            // Remove active from current
+            items[currentIndex].classList.remove('active');
+            
+            // Update index and add active
+            currentIndex = newIndex;
+            const nextItem = items[currentIndex];
+            nextItem.classList.add('active');
+            
+            // Cross-fade image
+            facilitiesImg.style.opacity = 0;
+            setTimeout(() => {
+                const newSrc = nextItem.getAttribute('data-image');
+                if (newSrc) {
+                    facilitiesImg.src = newSrc;
+                }
+                facilitiesImg.style.opacity = 1;
+            }, 300);
+        };
+
+        const startRotation = () => {
+            intervalId = setInterval(() => {
+                changeActiveItem((currentIndex + 1) % items.length);
+            }, 3000);
+        };
+
+        // Start initial rotation
+        startRotation();
+
+        // Add click listeners to items
+        items.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                if (index === currentIndex) return; // Ignore if already active
+                
+                // Clear existing interval to restart timer
+                clearInterval(intervalId);
+                
+                // Change to clicked item immediately
+                changeActiveItem(index);
+                
+                // Resume rotation
+                startRotation();
+            });
+        });
+    }
+
+    // Scroll Reveal Animations
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Animate only once
+            }
+        });
+    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+    revealElements.forEach(el => revealObserver.observe(el));
 });
