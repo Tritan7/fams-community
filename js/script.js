@@ -103,6 +103,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Bento Grid Sticky Hover Logic
+    const bentoItems = document.querySelectorAll('.bento-item');
+    if (bentoItems.length > 0) {
+        bentoItems[0].classList.add('bento-active');
+        
+        bentoItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                bentoItems.forEach(el => el.classList.remove('bento-active'));
+                item.classList.add('bento-active');
+            });
+        });
+    }
+
     // Hamburger menu toggle
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');

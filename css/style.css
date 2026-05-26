@@ -3,7 +3,7 @@
     /* Deep Navy Blue */
     --bg-secondary: #0a1526;
     /* Lighter Navy for sections */
-    --accent-blue: #00aeef;
+    --accent-blue: #3880B6;
     /* EVOS Light Blue */
     --accent-hover: #30bfff;
     --text-main: #ffffff;
@@ -290,48 +290,6 @@ a {
     filter: brightness(0.9) contrast(1.1);
 }
 
-/* Partners Section */
-.partners {
-    background-color: var(--bg-secondary);
-    padding: 3rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.partners-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.partner-logo {
-    opacity: 0.6;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.partner-logo img {
-    max-height: 45px;
-    max-width: 150px;
-    object-fit: contain;
-    filter: grayscale(100%) brightness(250%);
-    transition: all 0.3s ease;
-}
-
-.partner-logo:hover {
-    opacity: 1;
-    transform: scale(1.05);
-}
-
-.partner-logo:hover img {
-    filter: grayscale(0%) brightness(100%);
-}
-
 /* About Section New */
 .about-new {
     background-color: #ffffff;
@@ -352,7 +310,7 @@ a {
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--accent-blue);
     margin-bottom: 2rem;
     text-transform: uppercase;
@@ -398,6 +356,26 @@ a {
 }
 
 /* Services & Facilities Sections */
+.what-we-do {
+    background-color: #ffffff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-title-right {
+    text-align: right;
+    margin-bottom: 3rem;
+    margin-top: -4rem;
+    width: 100%;
+}
+
+.title-slam-dunk {
+    font-family: 'Slam Dunk', var(--font-heading);
+    font-size: 2rem;
+}
+
 .section-title-center {
     text-align: center;
     margin-bottom: 4rem;
@@ -477,9 +455,7 @@ a {
 }
 
 .bento-item {
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #f3f4f6;
     border-radius: 12px;
     padding: 0;
     overflow: hidden;
@@ -489,7 +465,6 @@ a {
     justify-content: flex-end;
     min-height: 250px;
     transition: all 0.3s ease;
-    border-top: 3px solid transparent;
     z-index: 1;
 }
 
@@ -503,12 +478,17 @@ a {
     background: linear-gradient(to top, rgba(4, 11, 22, 1) 0%, rgba(4, 11, 22, 0.4) 60%, transparent 100%);
     z-index: -1;
     pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
-.bento-item:hover {
+.bento-item.bento-active {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 174, 239, 0.15);
-    border-top: 3px solid var(--accent-blue);
+}
+
+.bento-item.bento-active::before {
+    opacity: 1;
 }
 
 /* Card 1 (Left tall) */
@@ -545,6 +525,12 @@ a {
     width: 100%;
     height: 100%;
     z-index: -2;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.bento-item.bento-active .bento-image {
+    opacity: 1;
 }
 
 .bento-image img {
@@ -552,12 +538,10 @@ a {
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
-    opacity: 0.8;
 }
 
-.bento-item:hover .bento-image img {
+.bento-item.bento-active .bento-image img {
     transform: scale(1.05);
-    opacity: 1;
 }
 
 .bento-text {
@@ -569,17 +553,18 @@ a {
 .bento-text h4 {
     font-size: 1.25rem;
     margin-bottom: 0;
-    color: var(--text-main);
+    color: var(--accent-blue);
     transition: all 0.4s ease;
 }
 
-.bento-item:hover .bento-text h4 {
+.bento-item.bento-active .bento-text h4 {
+    color: #ffffff;
     margin-bottom: 0.8rem;
 }
 
 .bento-text p {
     font-size: 0.95rem;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.85);
     line-height: 1.6;
     max-height: 0;
     opacity: 0;
@@ -587,7 +572,7 @@ a {
     transition: all 0.4s ease;
 }
 
-.bento-item:hover .bento-text p {
+.bento-item.bento-active .bento-text p {
     max-height: 150px;
     opacity: 1;
 }
@@ -1078,7 +1063,7 @@ a {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     max-width: 100%;
     width: fit-content;
