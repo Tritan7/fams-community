@@ -45,6 +45,42 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(aboutSection);
     }
 
+    // Hero Stats Counter
+    const countUpElements = document.querySelectorAll('.count-up');
+    const animateHeroCounters = () => {
+        countUpElements.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText.replace(/,/g, '');
+                const inc = target / 40; // Speed of counting
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc).toLocaleString('en-US');
+                    setTimeout(updateCount, 30);
+                } else {
+                    counter.innerText = target.toLocaleString('en-US');
+                }
+            };
+            
+            counter.innerText = '0';
+            updateCount();
+        });
+    };
+
+    const heroObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateHeroCounters();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    const heroSectionStats = document.querySelector('.hero-stats-small');
+    if (heroSectionStats) {
+        heroObserver.observe(heroSectionStats);
+    }
+
     // Hamburger menu toggle
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');

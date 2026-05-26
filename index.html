@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Outfit:wght@700;800;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Outfit:wght@700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <!-- FontAwesome for the play icon -->
@@ -17,12 +17,12 @@
 </head>
 
 <body>
-    <nav class="navbar">
+    <nav class="navbar pill-nav">
         <div class="container nav-container">
             <div class="logo">
                 <a href="#">
-                    <img src="assets/Logo_Evos.png" alt="EVOS Fams Logo" id="nav-logo"
-                        onerror="this.onerror=null; this.src='https://via.placeholder.com/150x50/0b1320/00AEEF?text=EVOS+FAMS';">
+                    <img src="assets/Logo_Evos.png" alt="EVOS Fams Logo" id="nav-logo">
+                    <span class="logo-text"><span class="blue">EVOS</span><span class="dark">FAMS</span></span>
                 </a>
             </div>
             <div class="hamburger" id="hamburger">
@@ -31,33 +31,54 @@
 
             <div class="nav-menu" id="nav-menu">
                 <ul class="nav-links">
-                    <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#events">EVENTS</a></li>
-                    <li><a href="#facilities">FACILITIES</a></li>
-                    <li><a href="#gallery">GALLERY</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#facilities">Facilities</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
                 </ul>
-                <a href="#join" class="btn btn-primary">Join Community</a>
+                <a href="#join" class="btn btn-primary rounded-pill">Join Us</a>
             </div>
         </div>
     </nav>
 
     <header class="hero">
-        <div class="container hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title reveal">BUILDING <span class="highlight">ESPORTS</span><br>ECOSYSTEM</h1>
-                <p class="hero-desc reveal delay-100">EVOS Fams is the ultimate community for gamers and esports
-                    enthusiasts. We host
+        <div class="container hero-container-new">
+            <!-- Left Side -->
+            <div class="hero-left reveal delay-100">
+                <div class="hero-stats-small">
+                    <strong><span class="count-up" data-target="1200">0</span>+</strong>
+                    <span>Happy Members</span>
+                </div>
+
+                <h1 class="hero-title-huge">BUILDING THE<br>ESPORTS<br>ECOSYSTEM</h1>
+
+                <div class="hero-actions-new">
+                    <a href="#join" class="btn btn-primary rounded-pill">Join Community</a>
+                    <a href="#about" class="btn btn-white rounded-pill">More About us</a>
+                </div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="hero-right reveal delay-300">
+                <p class="hero-desc-new">EVOS Fams is the ultimate community for gamers and esports enthusiasts. We host
                     gaming events, manage talent, and create a competitive environment for players to grow and shine in
                     the esports scene.</p>
 
-
-                <div class="hero-actions reveal delay-200">
-                    <a href="#about" class="btn btn-primary">More About Us</a>
-                    <a href="#video" class="btn-video"><i class="fa-solid fa-circle-play"></i> Watch Video</a>
+                <div class="hero-card">
+                    <div class="hero-card-left">
+                        <h4>Esports Event &<br>Community</h4>
+                        <div class="avatar-stack">
+                            <img src="assets/ceo-evos.jpg" alt="Avatar">
+                            <img src="assets/evof-ff.jpeg" alt="Avatar">
+                            <img src="assets/M1_evos.jpg" alt="Avatar">
+                            <img src="assets/meet-evos.png" alt="Avatar">
+                            <img src="assets/evos-mpl4.jpg" alt="Avatar">
+                        </div>
+                    </div>
+                    <div class="hero-card-right">
+                        <img src="assets/hero-image.png" alt="Event Thumbnail">
+                    </div>
                 </div>
-            </div>
-            <div class="hero-image-wrapper reveal delay-300">
-                <img src="assets/hero_image.png" alt="Esports Arena" class="hero-image">
             </div>
         </div>
     </header>
