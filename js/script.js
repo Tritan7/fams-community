@@ -218,14 +218,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Scroll Reveal Animations
+    // Scroll Reveal Animations with Stagger
     const revealElements = document.querySelectorAll('.reveal');
+    let staggerTimeout = null;
+    let staggerCounter = 0;
+
     const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target); // Animate only once
-            }
+        // Filter out intersecting entries
+        const visibleEntries = entries.filter(entry => entry.isIntersecting);
+        
+        visibleEntries.forEach(entry => {
+            // Apply dynamic stagger delay
+            entry.target.style.transitionDelay = `${staggerCounter * 150}ms`;
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+            
+            staggerCounter++;
+            
+            // Reset counter after batch
+            if (staggerTimeout) clearTimeout(staggerTimeout);
+            staggerTimeout = setTimeout(() => {
+                staggerCounter = 0;
+            }, 100);
         });
     }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
