@@ -316,6 +316,14 @@ a {
     max-width: 900px;
 }
 
+.section-title {
+    font-size: 2rem;
+    color: var(--accent-blue);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
 .about-images-row {
     display: flex;
     justify-content: center;
