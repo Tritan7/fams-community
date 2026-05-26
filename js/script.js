@@ -81,25 +81,43 @@ document.addEventListener('DOMContentLoaded', () => {
         heroObserver.observe(heroSectionStats);
     }
 
-    // Scroll animation for about text fading
+    // Scroll animation for sticky about text (word by word)
+    const aboutStickySection = document.querySelector('.about-new');
     const aboutText = document.querySelector('.about-main-text');
-    if (aboutText) {
+    if (aboutStickySection && aboutText) {
+        const words = aboutText.innerText.trim().split(/\s+/);
+        aboutText.innerHTML = '';
+        const spans = [];
+        
+        words.forEach(word => {
+            const span = document.createElement('span');
+            span.innerText = word + ' ';
+            span.style.color = 'rgba(26, 32, 44, 0.2)';
+            span.style.transition = 'color 0.1s ease-out';
+            aboutText.appendChild(span);
+            spans.push(span);
+        });
+
         window.addEventListener('scroll', () => {
-            const rect = aboutText.getBoundingClientRect();
+            const rect = aboutStickySection.getBoundingClientRect();
             const windowHeight = window.innerHeight;
             
-            const start = windowHeight * 0.8;
-            const end = windowHeight * 0.4;
+            const scrollDistance = rect.height - windowHeight;
             
             let progress = 0;
-            if (rect.top <= end) {
-                progress = 100;
-            } else if (rect.top <= start) {
-                progress = 100 - ((rect.top - end) / (start - end) * 100);
+            if (rect.top <= 0) {
+                progress = Math.min(1, Math.max(0, -rect.top / scrollDistance));
             }
             
-            const opacity = 0.2 + (progress / 100) * 0.8;
-            aboutText.style.setProperty('--text-opacity', opacity);
+            const wordsToColor = Math.floor(progress * spans.length);
+            
+            spans.forEach((span, index) => {
+                if (index < wordsToColor) {
+                    span.style.color = '#1a202c';
+                } else {
+                    span.style.color = 'rgba(26, 32, 44, 0.2)';
+                }
+            });
         });
     }
 
