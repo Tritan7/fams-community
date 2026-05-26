@@ -229,9 +229,15 @@ document.addEventListener('DOMContentLoaded', () => {
         
         visibleEntries.forEach(entry => {
             // Apply dynamic stagger delay
-            entry.target.style.transitionDelay = `${staggerCounter * 150}ms`;
+            const delay = staggerCounter * 150;
+            entry.target.style.transitionDelay = `${delay}ms`;
             entry.target.classList.add('active');
             observer.unobserve(entry.target);
+            
+            // Clean up the inline delay after animation completes so hover effects aren't delayed
+            setTimeout(() => {
+                entry.target.style.transitionDelay = '';
+            }, delay + 1000);
             
             staggerCounter++;
             
