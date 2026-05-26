@@ -1054,7 +1054,7 @@ a {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     max-width: 100%;
     width: fit-content;
@@ -1064,8 +1064,8 @@ a {
     color: #1a202c;
     font-size: 1.25rem;
     margin-bottom: 1rem;
-    line-height: 1.1;
-    font-weight: 300;
+    line-height: 1;
+    font-weight: 250;
 }
 
 .avatar-stack {
@@ -1101,9 +1101,10 @@ a {
 
 .hero-card-right img {
     width: 160px;
-    height: 120px;
+    height: 100px;
     border-radius: 12px;
     object-fit: cover;
+    display: block;
 }
 
 /* Responsive */
