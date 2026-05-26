@@ -332,10 +332,23 @@ a {
     filter: grayscale(0%) brightness(100%);
 }
 
-/* About Section */
-.about {
+/* About Section New */
+.about-new {
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 6rem 0;
     text-align: center;
+}
+
+.about-container-new {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
 }
 
 .section-title {
@@ -346,31 +359,42 @@ a {
     letter-spacing: 2px;
 }
 
-.about-text {
-    max-width: 900px;
-    margin: 0 auto 4rem auto;
-    color: var(--text-muted);
-    font-size: 1.1rem;
+.about-new .section-title {
+    margin-bottom: 6rem;
+    margin-top: -4rem;
 }
 
-.about-stats {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 2rem;
+.about-images-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
-.about-stats .stat-item h3 {
-    font-size: 2.5rem;
-    color: var(--accent-blue);
-    margin-bottom: 0.5rem;
+.about-images-row img {
+    width: 90px;
+    height: 70px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.about-stats .stat-item p {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    font-weight: 600;
-    text-transform: uppercase;
-    line-height: 1.4;
+.about-main-text {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: rgba(26, 32, 44, var(--text-opacity, 0.2));
+    font-family: 'Manrope', sans-serif;
+    transition: color 0.1s ease-out;
+}
+
+.about-sub-text {
+    font-size: 1.5rem;
+    color: #a0aec0;
+    font-weight: 500;
+    line-height: 1.5;
+    font-family: 'Manrope', sans-serif;
 }
 
 /* Services & Facilities Sections */
@@ -1062,10 +1086,10 @@ a {
 
 .hero-card-left h4 {
     color: #1a202c;
-    font-size: 1.25rem;
+    font-size: 1rem;
     margin-bottom: 1rem;
     line-height: 1;
-    font-weight: 250;
+    font-weight: 300;
 }
 
 .avatar-stack {

@@ -81,6 +81,28 @@ document.addEventListener('DOMContentLoaded', () => {
         heroObserver.observe(heroSectionStats);
     }
 
+    // Scroll animation for about text fading
+    const aboutText = document.querySelector('.about-main-text');
+    if (aboutText) {
+        window.addEventListener('scroll', () => {
+            const rect = aboutText.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            const start = windowHeight * 0.8;
+            const end = windowHeight * 0.4;
+            
+            let progress = 0;
+            if (rect.top <= end) {
+                progress = 100;
+            } else if (rect.top <= start) {
+                progress = 100 - ((rect.top - end) / (start - end) * 100);
+            }
+            
+            const opacity = 0.2 + (progress / 100) * 0.8;
+            aboutText.style.setProperty('--text-opacity', opacity);
+        });
+    }
+
     // Hamburger menu toggle
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
