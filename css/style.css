@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
 :root {
     --bg-primary: #040b16;
     /* Deep Navy Blue */
@@ -322,6 +324,8 @@ a {
     margin-bottom: 2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-family: 'Play', sans-serif;
+    font-weight: 700;
 }
 
 .about-images-row {
@@ -370,11 +374,6 @@ a {
     margin-bottom: 3rem;
     margin-top: -4rem;
     width: 100%;
-}
-
-.title-slam-dunk {
-    font-family: 'Slam Dunk', var(--font-heading);
-    font-size: 2rem;
 }
 
 .section-title-center {
@@ -1090,9 +1089,9 @@ a {
 }
 
 .hero-title-huge {
-    font-family: 'Slam Dunk', var(--font-heading);
+    font-family: 'Play', sans-serif;
     font-size: 5.5rem;
-    font-weight: 900;
+    font-weight: 700;
     line-height: 1.1;
     color: #ffffff;
     text-transform: uppercase;
