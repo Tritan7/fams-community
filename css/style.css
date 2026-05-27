@@ -10,8 +10,8 @@
     --accent-hover: #30bfff;
     --text-main: #ffffff;
     --text-muted: #a0aec0;
-    --font-heading: 'Outfit', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Manrope', sans-serif;
+    --font-body: 'Manrope', sans-serif;
 }
 
 * {
@@ -183,6 +183,7 @@ a {
 }
 
 .hero-title {
+    font-family: 'Play', sans-serif;
     font-size: 4.5rem;
     line-height: 1.1;
     margin-bottom: 1.5rem;
@@ -725,6 +726,7 @@ a {
 }
 
 .cta-banner-content .highlight {
+    font-family: 'Play', sans-serif;
     color: var(--accent-blue);
 }
 
@@ -1452,7 +1454,8 @@ a {
         font-size: 0;
         padding: 0;
         border: none !important;
-        position: static !important; /* Forces absolute span to use the grid as container */
+        position: static !important;
+        /* Forces absolute span to use the grid as container */
         cursor: pointer;
         transition: all 0.3s ease;
         box-shadow: none;
@@ -1479,7 +1482,8 @@ a {
     .facilities-list li.active span {
         display: block;
         position: absolute;
-        bottom: 4rem; /* Floats perfectly into the image above the dots */
+        bottom: 4rem;
+        /* Floats perfectly into the image above the dots */
         left: 50%;
         transform: translateX(-50%);
         width: 100vw;
