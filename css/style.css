@@ -385,7 +385,7 @@ a {
 .two-column {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 3.5rem;
     align-items: center;
     margin-bottom: 2rem;
 }
@@ -598,7 +598,7 @@ a {
 
 .facilities-grid .col-content {
     display: flex;
-    justify-content: center;
+    justify-content: start;
 }
 
 .facilities-image-wrapper {
