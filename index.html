@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- FontAwesome for the play icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -203,28 +205,45 @@
             <h2 class="section-title title-slam-dunk" style="color: var(--accent-blue);">&mdash; GLIMPSE OF US</h2>
         </div>
 
-        <div class="marquee-container reveal">
-            <div class="marquee-track marquee-track-left">
-                <img src="assets/evof-ff.jpeg" alt="Gallery">
-                <img src="assets/evos-mpl4.jpg" alt="Gallery">
-                <img src="assets/mpl-evos.jpeg" alt="Gallery">
-                <img src="assets/M1_evos.jpg" alt="Gallery">
-                <img src="assets/evof-ff.jpeg" alt="Gallery">
-                <img src="assets/evos-mpl4.jpg" alt="Gallery">
-                <img src="assets/mpl-evos.jpeg" alt="Gallery">
-                <img src="assets/M1_evos.jpg" alt="Gallery">
+        <div class="desktop-gallery">
+            <div class="marquee-container reveal">
+                <div class="marquee-track marquee-track-left">
+                    <img src="assets/evof-ff.jpeg" alt="Gallery">
+                    <img src="assets/evos-mpl4.jpg" alt="Gallery">
+                    <img src="assets/mpl-evos.jpeg" alt="Gallery">
+                    <img src="assets/M1_evos.jpg" alt="Gallery">
+                    <img src="assets/evof-ff.jpeg" alt="Gallery">
+                    <img src="assets/evos-mpl4.jpg" alt="Gallery">
+                    <img src="assets/mpl-evos.jpeg" alt="Gallery">
+                    <img src="assets/M1_evos.jpg" alt="Gallery">
+                </div>
+            </div>
+            <div class="marquee-container reveal delay-100" style="margin-top: 1rem;">
+                <div class="marquee-track marquee-track-right">
+                    <img src="assets/meet-evos.png" alt="Gallery">
+                    <img src="assets/ceo-evos.jpg" alt="Gallery">
+                    <img src="assets/evos-itf.jpg" alt="Gallery">
+                    <img src="assets/Studio.jpg" alt="Gallery">
+                    <img src="assets/meet-evos.png" alt="Gallery">
+                    <img src="assets/ceo-evos.jpg" alt="Gallery">
+                    <img src="assets/evos-itf.jpg" alt="Gallery">
+                    <img src="assets/Studio.jpg" alt="Gallery">
+                </div>
             </div>
         </div>
-        <div class="marquee-container reveal delay-100" style="margin-top: 1.5rem;">
-            <div class="marquee-track marquee-track-right">
-                <img src="assets/meet-evos.png" alt="Gallery">
-                <img src="assets/ceo-evos.jpg" alt="Gallery">
-                <img src="assets/evos-itf.jpg" alt="Gallery">
-                <img src="assets/Studio.jpg" alt="Gallery">
-                <img src="assets/meet-evos.png" alt="Gallery">
-                <img src="assets/ceo-evos.jpg" alt="Gallery">
-                <img src="assets/evos-itf.jpg" alt="Gallery">
-                <img src="assets/Studio.jpg" alt="Gallery">
+
+        <div class="mobile-gallery reveal delay-100" style="display: none;">
+            <div class="swiper gallerySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="assets/evof-ff.jpeg" alt="Gallery"></div>
+                    <div class="swiper-slide"><img src="assets/evos-mpl4.jpg" alt="Gallery"></div>
+                    <div class="swiper-slide"><img src="assets/mpl-evos.jpeg" alt="Gallery"></div>
+                    <div class="swiper-slide"><img src="assets/M1_evos.jpg" alt="Gallery"></div>
+                    <div class="swiper-slide"><img src="assets/meet-evos.png" alt="Gallery"></div>
+                    <div class="swiper-slide"><img src="assets/ceo-evos.jpg" alt="Gallery"></div>
+                    <div class="swiper-slide"><img src="assets/evos-itf.jpg" alt="Gallery"></div>
+                    <div class="swiper-slide"><img src="assets/Studio.jpg" alt="Gallery"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -314,6 +333,8 @@
         </div>
     </footer>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 

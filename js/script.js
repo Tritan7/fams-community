@@ -250,4 +250,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
     revealElements.forEach(el => revealObserver.observe(el));
+
+    // Mobile Gallery Swiper Initialization
+    if (typeof Swiper !== 'undefined' && document.querySelector('.gallerySwiper')) {
+        new Swiper('.gallerySwiper', {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+        });
+    }
 });
