@@ -1031,7 +1031,7 @@ a {
 .hero {
     position: relative;
     padding: 14rem 0 8rem 0;
-    background: url('../assets/hero-bg.jpg') center/cover no-repeat;
+    background: url('../assets/bg-hero.png') center/cover no-repeat;
     min-height: 100vh;
     font-family: 'Manrope', sans-serif;
 }
